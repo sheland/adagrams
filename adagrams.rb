@@ -48,28 +48,30 @@ letters ={
 # ----------- ten letter draw -----------------
 puts letters
 
-4.times do
+
   draw_letters = ""
   sample_array = []
   # letters.select do |k, v|
   #   puts sample(k)
   # end
 
-
-  sample_array << letters.to_a.sample(10) #randomizes keys and puts in array
+  #this method is inputting 10 #'s into array before being checked for values
+  #sample_array << letters.to_a.sample(10) #randomizes keys and puts in array
 
   sample_array = sample_array.flatten(1)
 #transform data into method
 sample_array.each do |letter_array| #iterate through each array to get the letters, then subtract one from the key value
+
 
   until draw_letters.length == 10 #draw_letters string must equal to length
     key_value = letters[letter_array[0]]
 
       if key_value > 0
           draw_letters << "#{letter_array[0]} " #all 0 index is ltr
-      else
+      elsif
+         key_value < 1
          garbage = []
-         garbage = "#{letter_array[0]} "
+         garbage << "#{letter_array[0]} "
      end
   end
   print letter_array[0]
@@ -83,6 +85,3 @@ sample_array.each do |letter_array| #iterate through each array to get the lette
 end
 
 print draw_letters
-puts "\n"
-puts letters
-end
