@@ -43,7 +43,7 @@ letters ={
 "Z": 1
 }
 
-
+puts "Hey Shelan!"
 
 # ----------- ten letter draw -----------------
 puts letters
