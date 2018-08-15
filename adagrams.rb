@@ -26,16 +26,18 @@ letters ={
 "Z": 1
 }
 
+#---------------------draw 10 letters-----------------
 def draw_letters(hash)
   player_letters = []
     hash.each do |k, v|
       if v > 0
-        player_letters << k
+        player_letters << "#{k}"
       end
     end
   return player_letters.sample(10)
 end
 
-letters_drawn = draw_letters(letters)
+letters = draw_letters(letters)
 
-puts letters_drawn
+print letters
+#------------------------------------------------------
