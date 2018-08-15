@@ -35,11 +35,8 @@ def draw_letters(hash)
       end
       hash[k] = v - 1
     end
-    print hash
   return player_letters.sample(10)
 end
 
 letters = draw_letters(letters)
-
-print letters
 #------------------------------------------------------
