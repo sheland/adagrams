@@ -41,33 +41,32 @@ def draw_letters(hash)
     return player_letters.sample(10) #will not duplicate letters maybe .map somewhere?
   end
 
-letters = draw_letters(letters)
+# letters = draw_letters(letters)
 #-------------wave 2-----------------------------------
-#drawn_letters must match player's words
-# practice_word = "CATT"
-# practice_true = ["C", "B", "A", "H", "T"]
-# practice_false = ["d", "c", "a", "b"]
-#
-# #is user input included in hand?
-# #do not mess with this array (letters_in_hand)!!!!
-# def uses_available_letters?(input, letters_in_hand)
-#   #used_ltrs = [false] * letters_in_hand.length
-#   input = input.split("")
-# i = 0
-# ap input.select do |ltr|
-#
-#     letters_in_hand.each do |hand|
-#       hand == ltr
-#     i += 1
-#   end
-#   end
-#   # print input.length
-#   # print i
-#
-#   #print used_ltrs
-# end
-#
-# uses_available_letters?(practice_word, practice_true)
+# drawn_letters must match player's words
+#is user input included in hand?
+#do not mess with this array (letters_in_hand)!!!!
+def uses_available_letters?(input, letters_in_hand)
+
+  input = input.split("")
+  tru_fals = []
+  input.each do |let|
+
+      if letters_in_hand.include?(let)
+        tru_fals << letters_in_hand.delete_at(letters_in_hand.index(let))
+      else
+        tru_fals << false
+      end
+    end
+
+    if tru_fals.include?(false)
+      return false
+    else
+      return true
+    end
+end
+
+ap uses_available_letters?(practice_word, practice_true)
 #---------------------------wave 3-----------------------
 
 def score_word(word)
@@ -98,7 +97,7 @@ def score_word(word)
     return score
 end
 
-score_word("computer")
+#score_word("computer")
 
 #-----------------wave 4 --------------------
 
@@ -122,4 +121,4 @@ def highest_score_from_words(words)
 
 end
 
-highest_score_from_words([["CAT"], ["SUPERSONIC"], ["DOG"], ["FISH"], ["LEANNEISGREATANDSHELANISAWESOME"]])
+#highest_score_from_words([["CAT"], ["SUPERSONIC"], ["DOG"], ["FISH"], ["LEANNEISGREATANDSHELANISAWESOME"]])
