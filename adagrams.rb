@@ -6,16 +6,16 @@ letters ={
 "B": 2,
 "C": 2,
 "D": 4,
-# "E": 12,
-# "F": 2,
-# "G": 3,
-# "H": 2,
-# "I": 9,
-# "J": 1,
-# "K": 1,
-# "L": 4,
-# "M": 2,
-# "N": 6,
+"E": 12,
+"F": 2,
+"G": 3,
+"H": 2,
+"I": 9,
+"J": 1,
+"K": 1,
+"L": 4,
+"M": 2,
+"N": 6,
 "O": 8,
 "P": 2,
 "Q": 1,
@@ -66,7 +66,7 @@ def uses_available_letters?(input, letters_in_hand)
     end
 end
 
-ap uses_available_letters?(practice_word, practice_true)
+#ap uses_available_letters?(practice_word, practice_true)
 #---------------------------wave 3-----------------------
 
 def score_word(word)
