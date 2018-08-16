@@ -1,4 +1,5 @@
-#require 'pry'
+require 'pry'
+require 'awesome_print'
 
 letters ={
 "A": 9,
@@ -41,52 +42,32 @@ def draw_letters(hash)
   end
 
 letters = draw_letters(letters)
-#------------------------------------------------------
+#-------------wave 2-----------------------------------
 #drawn_letters must match player's words
-practice_word = "catt"
-practice_true = ["C", "B", "A", "T", "H", "T"]
-practice_false = ["d", "c", "a", "b"]
-
-#is user input included in hand?
-#do not mess with this array (letters_in_hand)!!!!
-def uses_available_letters?(input, letters_in_hand)
-  # input.upcase! #converts to upcase for comparison of in hand (all caps)
-  # input = input.split("")
-
-  used_array = [false] * letters_in_hand.length
-  input.split("")each do |index|
-    letters_in_hand.each do |x|
-        print "letters in hand #{x}"
-      # if index == x
-      #   used_array[x.index] = true
-      # end
-    end
-  end
-  print used_array
-  # letters_in_hand hash
-  # ltr => 1
-  # if k
-  #   += 1
+# practice_word = "CATT"
+# practice_true = ["C", "B", "A", "H", "T"]
+# practice_false = ["d", "c", "a", "b"]
 #
-# iterate through input
-#   count letters
-
-  # letters_in_hand = letters_in_hand.join("")
-  # ltr_count = 0
-  # print letters_in_hand
-  #
-  # input.each do |i|
-  #   ltr_count = letters_in_hand.count i
-  # end
-  #
-  # puts "The letter count is #{ltr_count}"
-  # puts "The length of the input is #{input.length}"
-    # print input
-    # check = input.all?{|i| letters_in_hand.include?(i)} #determines true or false - for i does in hand include?
-    # puts check
-end
-
-uses_available_letters?(practice_word, practice_true)
+# #is user input included in hand?
+# #do not mess with this array (letters_in_hand)!!!!
+# def uses_available_letters?(input, letters_in_hand)
+#   #used_ltrs = [false] * letters_in_hand.length
+#   input = input.split("")
+# i = 0
+# ap input.select do |ltr|
+#
+#     letters_in_hand.each do |hand|
+#       hand == ltr
+#     i += 1
+#   end
+#   end
+#   # print input.length
+#   # print i
+#
+#   #print used_ltrs
+# end
+#
+# uses_available_letters?(practice_word, practice_true)
 #---------------------------wave 3-----------------------
 
 def score_word(word)
@@ -121,23 +102,24 @@ score_word("computer")
 
 #-----------------wave 4 --------------------
 
-# def highest_score_from_words(words)
-#   best_score = 0
-#   best_word = ""
-#   winner = {word: "a"
-#             score: 0}
-#
-#   words.each do |i|
-#     print i[0].upcase.split()
-#     word = i[0].to_s #turns the new array into a string
-#     score = score_word(word)
-#       if score > winner[:score]
-#         winner << word: word, score: score
-#       end
-#   end
-#
-#   print winner
-#
-# end
-#
-# highest_score_from_words([["cat"], ["supersonic"] ["dog"], ["fish"]])
+def highest_score_from_words(words)
+  best_score = 0
+  best_word = ""
+  winner = {word: "a",
+            score: 0}
+
+  words.each do |word|
+    word[0].split()
+    word = word[0].to_s #turns the new array into a string
+    score = score_word(word)
+    if score > winner[:score]
+     winner[:score] = score
+     winner[:word] = word
+    end
+  end
+
+  return winner
+
+end
+
+highest_score_from_words([["CAT"], ["SUPERSONIC"], ["DOG"], ["FISH"], ["LEANNEISGREATANDSHELANISAWESOME"]])
