@@ -74,7 +74,12 @@ def highest_score_from_words(words)
     score = score_word(word)
 
     if score == winner[:score]
-      if word.length == 10
+
+      if winner[:word].length == 10
+        winner[:word] = winner[:word]
+        winner[:score] = winner[:score]
+
+      elsif word.length == 10
         winner[:word] = word
         winner[:score] = score
 
