@@ -5,9 +5,9 @@ Congratulations! You're submitting your assignment.
 
 Feature | Feedback
 --- | ---
-What are the components that make up a method? |
-What are the advantages of using git when collaboratively working on one code base? |
-What kind of relationship did you and your pair have with the unit tests? |
-Does your code use any methods from the `Enumerable` mixin? If so, where and why was it helpful? |
-What was one method you and your pair used to debug code? |
-What are two discussion points that you and your pair discussed when giving/receiving feedback from each other that you would be willing to share? |
+What are the components that make up a method? | signature, parameters, code block, end
+What are the advantages of using git when collaboratively working on one code base? | keep track of changes, both people can have access to what they are working on, can merge changes
+What kind of relationship did you and your pair have with the unit tests? | one of us is an ask and one of us is an "extreme" guess, but we made it work and we both tried to switch driver/navigator roles, but it is hard for an ask to not grab the computer sometimes -- and hard for the guess to grab it. We have to be aware of e/o differences and the ask can ask the guess if everything is well so far.
+Does your code use any methods from the `Enumerable` mixin? If so, where and why was it helpful? | yes we used include?
+What was one method you and your pair used to debug code? | we did mostly puts debugging, and we also continuously used the specs file using rake, skipping certain to tests, to see which areas were passing and failing and also used binding.pry
+What are two discussion points that you and your pair discussed when giving/receiving feedback from each other that you would be willing to share? | we just shared feedback in the beginning regarding our guess vs ask preferences, in order to work with it from the start
