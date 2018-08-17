@@ -168,13 +168,13 @@ After several hands have been drawn, words have been submitted, checked, scored,
 
 Add a method called `highest_score_from words` in `adagrams.rb`. This method should have the following properties:
 
-- Has one parameter: `words`, which is an array of strings
-- Returns a single hash that represents the data of a winning word and its score. The hash should have the following keys:
+- Has one parameter: `words`, which is an array of strings = yes
+- Returns a single hash that represents the data of a winning word and its score. The hash should have the following keys: = yes
   - `:word`, whose value is a string of a word
   - `:score`, whose value is the score of that word
 - In the case of tie in scores, use these tie-breaking rules:
     - prefer the word with the fewest letters...
-    - ...unless one word has 10 letters. If the top score is tied between multiple words and one is 10 letters long, choose the one with 10 letters over the one with fewer tiles
+    - ...unless one word has 10 letters. If the top score is tied between multiple words and one is 10 letters long, choose the one with 10 letters over the one with fewer tiles = yes
     - If the there are multiple words that are the same score and the same length, pick the first one in the supplied list
 
 ### Optional: Wave 5
@@ -195,6 +195,6 @@ There are no unit tests provided for this wave, but there is driver code found i
 
 Nota Bene: The original data for all of the alpha words of the English dictionary was found freely available at [`dwyl/english-word`'s repo](https://github.com/dwyl/english-words), and was modified to only include words under 10 characters.
 
---> 
+-->
 ## What Instructors Are Looking For
 Check out the [feedback template](feedback.md) which lists the items instructors will be looking for as they evaluate your project.
