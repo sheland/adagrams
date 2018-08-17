@@ -65,8 +65,6 @@ end
 # #-----------------wave 4 --------------------
 
 def highest_score_from_words(words)
-  best_score = 0
-  best_word = ""
   winner = {word: "a",
             score: 0}
 
@@ -75,28 +73,24 @@ def highest_score_from_words(words)
     word = word.to_s #turns the new array into a string
     score = score_word(word)
 
+    if score == winner[:score]
+      if word.length == 10
+        winner[:word] = word
+        winner[:score] = score
 
-      if word.length == 10 && score > winner[:score]
-          winner[:word] = word
-          winner[:score] = score
-        elsif score == winner[:score] && word.length == 10
-          winner[:word]
-          winner[:score]
-        elsif winner[:score] == score && word.length < 10 && word.length == winner[:word].length
-          winner[:word] = winner[:word]
-          winner[:score] = winner[:score]
-        elsif word.length == 10 && score > winner[:score]
-          winner[:word] = word
-          winner[:score] = score
-        elsif score == winner[:score] && word.length < winner[:word].length
-          winner[:word] = word
-          winner[:score] = score
-        elsif score > winner[:score]
-          winner[:word] = word
-          winner[:score] = score
+      elsif word.length == 10 && winner[:word].length == 10
+        winner[:word] = winner[:word]
+        winner[:score] = winner[:score]
+
+      elsif word.length < winner[:word].length && word.length != 10
+        winner[:word] = word
+        winner[:score] = score
       end
+
+    elsif score > winner[:score]
+      winner[:word] = word
+      winner[:score] = score
     end
+  end
     return winner
 end
-
-highest_score_from_words(["CAT", "SUPERSONIC", "DOG", "FISH", "NUPERSON"])
